@@ -1,0 +1,35 @@
+<resources>
+    <color name="black_overlay">#66000000</color>
+    <color name="white_overlay">#00000000</color>
+
+
+    <color name="sud_ubangi">#fffe280a</color>
+    <color name="nord_ubangi">#fffd9dfd</color>
+    <color name="mongala">#ffffffff</color>
+    <color name="bas_uele">#ffb97a57</color>
+    <color name="haut_uele">#ffffaec9</color>
+    <color name="ituri">#ffffc90e</color>
+    <color name="nord_kivu">#ffefe4b0</color>
+    <color name="sud_kivu">#ffb5e61d</color>
+    <color name="tshopo">#ff3f48cc</color>
+    <color name="maniema">#ff00a2e8</color>
+    <color name="sankuru">#ff22b14c</color>
+    <color name="tshuapa">#ffa349a4</color>
+    <color name="equateur">#ffe7e8e9</color>
+    <color name="mai_ndombe">#ffc3c3c3</color>
+    <color name="kinshasa">#ff929d84</color>
+    <color name="kwilu">#ff880015</color>
+    <color name="kasai">#ffff7f27</color>
+    <color name="kasai_central">#ff2f9ea8</color>
+    <color name="kasai_oriental">#ffd5dadc</color>
+    <color name="lomami">#ff348927</color>
+    <color name="kongo_central">#ffed1c24</color>
+    <color name="kwango">#fffff200</color>
+    <color name="lualaba">#ffc8bfe7</color>
+    <color name="haut_lomami">#ff7092be</color>
+    <color name="haut_katanga">#ff004040</color>
+    <color name="tanganyka">#ff99d9ea</color>
+
+
+
+</resources>
