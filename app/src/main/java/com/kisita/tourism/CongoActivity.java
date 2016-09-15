@@ -16,7 +16,6 @@ import java.lang.reflect.Field;
 
 public class CongoActivity extends Activity {
     private ImageView imageView;
-    private ImageView maskedImageView;
     private Field[] fields;
 
     @Override
@@ -25,7 +24,6 @@ public class CongoActivity extends Activity {
         setContentView(R.layout.activity_congo);
 
         imageView = (ImageView)findViewById(R.id.visibleImage);
-        maskedImageView = (ImageView)findViewById(R.id.nonvisibleImage);
 
         fields = CongoProvinces.class.getDeclaredFields();
 
