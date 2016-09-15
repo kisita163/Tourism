@@ -5,45 +5,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_hotels">Hotels</string>
 
-    <string-array name="kwilu">
-        <item>Bulungu</item>
-        <item>Masi-manimba</item>
-        <item>Bagata</item>
-        <item>Idiofa</item>
-        <item>Gungu</item>
-    </string-array>
-
-
-
-
-    <string-array name="kinshasa">
-        <item>Bandalungwa</item>
-        <item>Barumbu</item>
-        <item>Bumbu</item>
-        <item>Gombe</item>
-        <item>Kalamu</item>
-        <item>Kasa-Vubu</item>
-        <item>Kimbanseke</item>
-        <item>Kinshasa</item>
-        <item>Kintambo</item>
-        <item>Kisenso</item>
-        <item>Lemba</item>
-        <item>Limete</item>
-        <item>Lingwala</item>
-        <item>Makala</item>
-        <item>Maluku</item>
-        <item>Masina</item>
-        <item>Matete</item>
-        <item>Mont-Ngafula</item>
-        <item>Ndjili</item>
-        <item>Ngaba</item>
-        <item>Ngaliema</item>
-        <item>Ngiri-Ngiri</item>
-        <item>Nsele</item>
-        <item>Selembao</item>
-    </string-array>
-
-
     <string name="title_activity_sleep">SleepActivity</string>
     <string name="title_activity_table">TableActivity</string>
 
@@ -60,10 +21,6 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_image">ImageActivity</string>
 
-
-    <string name="kinshasa">KINSHASA</string>
-    <string name="goma">GOMA</string>
-    <string name="likasi">LIKASI</string>
     <string name="title_activity_congo">CongoActivity</string>
     <string name="title_activity_map">MapActivity</string>
 </resources>

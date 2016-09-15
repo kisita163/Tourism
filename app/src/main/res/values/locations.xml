@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- KWILU -->
+    <string-array name="kwilu">
+        <item>Bulungu</item>
+        <item>Masi-manimba</item>
+        <item>Bagata</item>
+        <item>Idiofa</item>
+        <item>Gungu</item>
+    </string-array>
+    <!-- KINSHASA -->
+    <string-array name="kinshasa">
+        <item>Bandalungwa</item>
+        <item>Barumbu</item>
+        <item>Bumbu</item>
+        <item>Gombe</item>
+        <item>Kalamu</item>
+        <item>Kasa-Vubu</item>
+        <item>Kimbanseke</item>
+        <item>Kinshasa</item>
+        <item>Kintambo</item>
+        <item>Kisenso</item>
+        <item>Lemba</item>
+        <item>Limete</item>
+        <item>Lingwala</item>
+        <item>Makala</item>
+        <item>Maluku</item>
+        <item>Masina</item>
+        <item>Matete</item>
+        <item>Mont-Ngafula</item>
+        <item>Ndjili</item>
+        <item>Ngaba</item>
+        <item>Ngaliema</item>
+        <item>Ngiri-Ngiri</item>
+        <item>Nsele</item>
+        <item>Selembao</item>
+    </string-array>
+</resources>
