@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/Hugues/AndroidStudioProjects/Tourism/osmdroid-android/src/main/res/values-it/strings.xml -->
+    <eat-comment/>
+    <string name="about">Info</string>
+    <string name="about_message">Questo software usa dati delle mappe forniti da OpenStreetMap.org</string>
+    <!-- From: file:/C:/Users/Hugues/AndroidStudioProjects/Tourism/osmdroid-android/src/main/res/values-it/tile_sources.xml -->
+    <eat-comment/>
+    <string name="cyclemap">Mappa ciclistica</string>
+    <string name="hills">Rilievo</string>
+    <!-- From: file:/C:/Users/Hugues/AndroidStudioProjects/Tourism/osmdroid-android/src/main/res/values-it/strings.xml -->
+    <eat-comment/>
+    <string name="map_mode">Tipo mappa</string>
+    <string name="my_location">La mia posizione</string>
+    <!-- From: file:/C:/Users/Hugues/AndroidStudioProjects/Tourism/osmdroid-android/src/main/res/values-it/tile_sources.xml -->
+    <eat-comment/>
+    <string name="topo">Sentieri</string>
+    <!-- From: file:/C:/Users/Hugues/AndroidStudioProjects/Tourism/osmdroid-android/src/main/res/values-it/strings.xml -->
+    <eat-comment/>
+    <string name="unknown">Sconosciuta</string>
+</resources>

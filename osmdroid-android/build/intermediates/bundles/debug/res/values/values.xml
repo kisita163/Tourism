@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/Hugues/AndroidStudioProjects/Tourism/osmdroid-android/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="about">About</string>
+    <string name="about_message">This software uses map data provided by OpenStreetMap.org</string>
+    <string name="app_name" translatable="false">Open Map</string>
+    <!-- From: file:/C:/Users/Hugues/AndroidStudioProjects/Tourism/osmdroid-android/src/main/res/values/tile_sources.xml -->
+    <eat-comment/>
+    <string name="base">OSM base layer</string>
+    <string name="base_nl">Netherlands base overlay</string>
+    <string name="bing">Bing</string>
+    <!-- From: file:/C:/Users/Hugues/AndroidStudioProjects/Tourism/osmdroid-android/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="compass">Compass</string>
+    <!-- From: file:/C:/Users/Hugues/AndroidStudioProjects/Tourism/osmdroid-android/src/main/res/values/tile_sources.xml -->
+    <eat-comment/>
+    <string name="cyclemap">Cycle Map</string>
+    <string name="fiets_nl">OpenFietsKaart overlay</string>
+    <!-- From: file:/C:/Users/Hugues/AndroidStudioProjects/Tourism/osmdroid-android/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="first_fix_message">Got the first fix</string>
+    <string name="format_distance_feet">%s ft</string>
+    <string name="format_distance_kilometers">%s km</string>
+    <string name="format_distance_meters">%s m</string>
+    <string name="format_distance_miles">%s mi</string>
+    <string name="format_distance_nautical_miles">%s nm</string>
+    <!-- From: file:/C:/Users/Hugues/AndroidStudioProjects/Tourism/osmdroid-android/src/main/res/values/tile_sources.xml -->
+    <eat-comment/>
+    <string name="hills">Hills</string>
+    <!-- From: file:/C:/Users/Hugues/AndroidStudioProjects/Tourism/osmdroid-android/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="map_mode">Map Source</string>
+    <!-- From: file:/C:/Users/Hugues/AndroidStudioProjects/Tourism/osmdroid-android/src/main/res/values/tile_sources.xml -->
+    <eat-comment/>
+    <string name="mapbox">MapBox</string>
+    <string name="mapnik" translatable="false">Mapnik</string>
+    <string name="mapquest_aerial">Mapquest Aerial</string>
+    <string name="mapquest_osm">Mapquest</string>
+    <!-- From: file:/C:/Users/Hugues/AndroidStudioProjects/Tourism/osmdroid-android/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="my_location">My location</string>
+    <string name="offline">Offline mode</string>
+    <!-- From: file:/C:/Users/Hugues/AndroidStudioProjects/Tourism/osmdroid-android/src/main/res/values/tile_sources.xml -->
+    <eat-comment/>
+    <string name="public_transport">Public transport</string>
+    <string name="roads_nl">Netherlands roads overlay</string>
+    <!-- From: file:/C:/Users/Hugues/AndroidStudioProjects/Tourism/osmdroid-android/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="samples">Samples</string>
+    <string name="set_mode_hide_me">hiding my current location</string>
+    <string name="set_mode_offline">Set to offline mode</string>
+    <string name="set_mode_online">Set to online mode</string>
+    <string name="set_mode_show_me">showing and tracking my current location</string>
+    <!-- From: file:/C:/Users/Hugues/AndroidStudioProjects/Tourism/osmdroid-android/src/main/res/values/tile_sources.xml -->
+    <eat-comment/>
+    <string name="topo">Topographic</string>
+    <!-- From: file:/C:/Users/Hugues/AndroidStudioProjects/Tourism/osmdroid-android/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="unknown">Unknown</string>
+</resources>

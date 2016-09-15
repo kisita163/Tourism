@@ -1,0 +1,15 @@
+description = 'An Android library to display OpenStreetMap views.'
+apply plugin: 'com.android.library'
+
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.8.2'
+}
