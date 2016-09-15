@@ -65,4 +65,5 @@
     <string name="goma">GOMA</string>
     <string name="likasi">LIKASI</string>
     <string name="title_activity_congo">CongoActivity</string>
+    <string name="title_activity_map">MapActivity</string>
 </resources>

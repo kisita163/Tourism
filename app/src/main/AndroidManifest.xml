@@ -45,12 +45,8 @@
         </activity>
         <activity
             android:name=".StartActivity"
-            android:label="@string/title_activity_start">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:label="@string/title_activity_start" >
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ImageActivity"
@@ -59,7 +55,18 @@
         <activity
             android:name=".CongoActivity"
             android:label="@string/title_activity_congo"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity
+            android:name=".MapActivity"
+            android:label="@string/title_activity_map"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
         </activity>
     </application>
+
 </manifest>
