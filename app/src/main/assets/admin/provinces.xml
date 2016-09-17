@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <pays name="rdcongo">
+	<!-- Kinshasa -->
 	<province name="Kinshasa">
 		<ville name="Kinshasa">
 			<commune  name="Bandalungwa">
@@ -77,4 +78,62 @@
 			</commune>
 		</ville>
 	</province>
+	<!-- Sud kivu -->
+    <province name="sud-kivu">
+        <ville name="Baraka">
+			<commune  name="Kalundja">
+				<geo></geo>
+			</commune>
+			<commune  name="Katanga">
+				<geo></geo>
+			</commune>
+			<commune  name="Baraka centre">
+				<geo></geo>
+			</commune>
+		</ville>
+        <ville name="Bukavu">
+			<commune  name="Bagira">
+				<geo></geo>
+			</commune>
+			<commune  name="Ibanda">
+				<geo></geo>
+			</commune>
+			<commune  name="Kadutu">
+				<geo></geo>
+			</commune>
+			<commune  name="Kasha">
+				<geo></geo>
+			</commune>
+		</ville>
+        <ville name="Kamituga">
+			<commune  name="Bitanga">
+				<geo></geo>
+			</commune>
+			<commune  name="Mobale">
+				<geo></geo>
+			</commune>
+		</ville>
+        <ville name="Shabunda">
+			<commune  name="Kizikibi">
+				<geo></geo>
+			</commune>
+			<commune  name="Lupinga">
+				<geo></geo>
+			</commune>
+			<commune  name="Ngalubue">
+				<geo></geo>
+			</commune>
+		</ville>
+        <ville name="Uvira">
+			<commune  name="Kalundu">
+				<geo></geo>
+			</commune>
+			<commune  name="Kamvivira">
+				<geo></geo>
+			</commune>
+			<commune  name="Mulongwe">
+				<geo></geo>
+			</commune>
+		</ville>
+    </province>
 </pays>
