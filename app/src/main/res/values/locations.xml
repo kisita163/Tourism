@@ -35,4 +35,12 @@
         <item>Nsele</item>
         <item>Selembao</item>
     </string-array>
+    <!-- Sud kivu -->
+    <string-array name="sud-kivu">
+        <item>Baraka</item>
+        <item>Bukavu</item>
+        <item>Kamituga</item>
+        <item>Shabunda</item>
+        <item>Uvira</item>
+    </string-array>
 </resources>

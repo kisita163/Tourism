@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<pays name="rdcongo">
+	<province name="Kinshasa">
+		<ville name="Kinshasa">
+			<commune  name="Bandalungwa">
+				<geo></geo>
+			</commune>
+			<commune name="Barumbu">
+				<geo></geo>
+			</commune>
+			<commune name="Bumbu">
+				<geo></geo>
+			</commune>
+			<commune name="Gombe">
+				<geo></geo>
+			</commune>
+			<commune name="Kalamu">
+				<geo></geo>
+			</commune>
+			<commune name="Kasa-Vubu">
+				<geo></geo>
+			</commune>
+			<commune name="Kimbanseke">
+				<geo></geo>
+			</commune>
+			<commune name="Kinshasa">
+				<geo></geo>
+			</commune>
+			<commune name="Kintambo">
+				<geo></geo>
+			</commune>
+			<commune name="Kisenso">
+				<geo></geo>
+			</commune>
+			<commune name="Lemba">
+				<geo></geo>
+			</commune>
+			<commune name="Limete">
+				<geo></geo>
+			</commune>
+			<commune name="Lingwala">
+				<geo></geo>
+			</commune>
+			<commune name="Makala">
+				<geo></geo>
+			</commune>
+			<commune name="Maluku">
+				<geo></geo>
+			</commune>
+			<commune name="Masina">
+				<geo></geo>
+			</commune>
+			<commune name="Matete">
+				<geo></geo>
+			</commune>
+			<commune name="Mont-Ngafula">
+				<geo></geo>
+			</commune>
+			<commune name="Ndjili">
+				<geo></geo>
+			</commune>
+			<commune name="Ngaba">
+				<geo></geo>
+			</commune>
+			<commune name="Ngaliema">
+				<geo></geo>
+			</commune>
+			<commune name="Ngiri-Ngiri">
+				<geo></geo>
+			</commune>
+			<commune name="Nsele">
+				<geo></geo>
+			</commune>
+			<commune name="Selembao">
+				<geo></geo>
+			</commune>
+		</ville>
+	</province>
+</pays>
