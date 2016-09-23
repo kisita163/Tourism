@@ -1,105 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <pays name="rdcongo">
-	<!-- Sud kivu -->
-	<province name="sud-kivu">
+	<!-- Kwilu -->
+	<province name="kwilu">
 		<ville name="Baraka">
 			<commune  name="Kalundja">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.09386</latitude>
+					<longitude>29.082670</longitude>
 				</geo>
 			</commune>
 			<commune  name="Katanga">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.09386</latitude>
+					<longitude>29.082670</longitude>
 				</geo>
 			</commune>
 			<commune  name="Baraka centre">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.09386</latitude>
+					<longitude>29.082670</longitude>
 				</geo>
 			</commune>
 		</ville>
 		<ville name="Bukavu">
 			<commune  name="Bagira">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-2.508115 </latitude>
+					<longitude>28.864131</longitude>
 				</geo>
 			</commune>
 			<commune  name="Ibanda">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-2.508115 </latitude>
+					<longitude>28.864131</longitude>
 				</geo>
 			</commune>
 			<commune  name="Kadutu">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-2.508115 </latitude>
+					<longitude>28.864131</longitude>
 				</geo>
 			</commune>
 			<commune  name="Kasha">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-2.508115 </latitude>
+					<longitude>28.864131</longitude>
 				</geo>
 			</commune>
 		</ville>
 		<ville name="Kamituga">
 			<commune  name="Bitanga">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-3.5390412</latitude>
+					<longitude>27.693349</longitude>
 				</geo>
 			</commune>
 			<commune  name="Mobale">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-3.5390412</latitude>
+					<longitude>27.693349</longitude>
 				</geo>
 			</commune>
 		</ville>
 		<ville name="Shabunda">
 			<commune  name="Kizikibi">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-2.694269</latitude>
+					<longitude>27.344019</longitude>
 				</geo>
 			</commune>
 			<commune  name="Lupinga">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-2.694269</latitude>
+					<longitude>27.344019</longitude>
 				</geo>
 			</commune>
 			<commune  name="Ngalubue">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-2.694269</latitude>
+					<longitude>27.344019</longitude>
 				</geo>
 			</commune>
 		</ville>
 		<ville name="Uvira">
 			<commune  name="Kalundu">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-3.3728836</latitude>
+					<longitude>29.144879</longitude>
 				</geo>
 			</commune>
 			<commune  name="Kamvivira">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-3.3728836</latitude>
+					<longitude>29.144879</longitude>
 				</geo>
 			</commune>
 			<commune  name="Mulongwe">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-3.3728836</latitude>
+					<longitude>29.144879</longitude>
+				</geo>
+			</commune>
+		</ville>
+	</province>
+	<!-- Sud kivu -->
+	<province name="sud-kivu">
+		<ville name="Baraka">
+			<commune  name="Kalundja">
+				<geo>
+					<latitude>-4.09386</latitude>
+					<longitude>29.082670</longitude>
+				</geo>
+			</commune>
+			<commune  name="Katanga">
+				<geo>
+					<latitude>-4.09386</latitude>
+					<longitude>29.082670</longitude>
+				</geo>
+			</commune>
+			<commune  name="Baraka centre">
+				<geo>
+					<latitude>-4.09386</latitude>
+					<longitude>29.082670</longitude>
+				</geo>
+			</commune>
+		</ville>
+		<ville name="Bukavu">
+			<commune  name="Bagira">
+				<geo>
+					<latitude>-2.508115 </latitude>
+					<longitude>28.864131</longitude>
+				</geo>
+			</commune>
+			<commune  name="Ibanda">
+				<geo>
+					<latitude>-2.508115 </latitude>
+					<longitude>28.864131</longitude>
+				</geo>
+			</commune>
+			<commune  name="Kadutu">
+				<geo>
+					<latitude>-2.508115 </latitude>
+					<longitude>28.864131</longitude>
+				</geo>
+			</commune>
+			<commune  name="Kasha">
+				<geo>
+					<latitude>-2.508115 </latitude>
+					<longitude>28.864131</longitude>
+				</geo>
+			</commune>
+		</ville>
+		<ville name="Kamituga">
+			<commune  name="Bitanga">
+				<geo>
+					<latitude>-3.5390412</latitude>
+					<longitude>27.693349</longitude>
+				</geo>
+			</commune>
+			<commune  name="Mobale">
+				<geo>
+					<latitude>-3.5390412</latitude>
+					<longitude>27.693349</longitude>
+				</geo>
+			</commune>
+		</ville>
+		<ville name="Shabunda">
+			<commune  name="Kizikibi">
+				<geo>
+					<latitude>-2.694269</latitude>
+					<longitude>27.344019</longitude>
+				</geo>
+			</commune>
+			<commune  name="Lupinga">
+				<geo>
+					<latitude>-2.694269</latitude>
+					<longitude>27.344019</longitude>
+				</geo>
+			</commune>
+			<commune  name="Ngalubue">
+				<geo>
+					<latitude>-2.694269</latitude>
+					<longitude>27.344019</longitude>
+				</geo>
+			</commune>
+		</ville>
+		<ville name="Uvira">
+			<commune  name="Kalundu">
+				<geo>
+					<latitude>-3.3728836</latitude>
+					<longitude>29.144879</longitude>
+				</geo>
+			</commune>
+			<commune  name="Kamvivira">
+				<geo>
+					<latitude>-3.3728836</latitude>
+					<longitude>29.144879</longitude>
+				</geo>
+			</commune>
+			<commune  name="Mulongwe">
+				<geo>
+					<latitude>-3.3728836</latitude>
+					<longitude>29.144879</longitude>
 				</geo>
 			</commune>
 		</ville>
@@ -108,148 +211,148 @@
 		<ville name="Kinshasa">
 			<commune  name="Bandalungwa">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Barumbu">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Bumbu">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Gombe">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Kalamu">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Kasa-Vubu">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Kimbanseke">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Kinshasa">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Kintambo">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Kisenso">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Lemba">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Limete">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Lingwala">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Makala">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Maluku">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Masina">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Matete">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Mont-Ngafula">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Ndjili">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Ngaba">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Ngaliema">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Ngiri-Ngiri">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Nsele">
 				<geo>
-					<latitude>0</latitude>
-					<longitude>1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 			<commune name="Selembao">
 				<geo>
-					<latitude type="text">0</latitude>
-					<longitude type="text">1</longitude>
+					<latitude>-4.339907</latitude>
+					<longitude>15.287433</longitude>
 				</geo>
 			</commune>
 		</ville>
-	</province> -->
+	</province>
 </pays>

@@ -2,6 +2,7 @@ package com.kisita.tourism;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -21,9 +22,22 @@ public class MapActivity extends Activity {
         mMapView = (MapView) findViewById(R.id.mapview);
         mMapView.setTileSource(TileSourceFactory.DEFAULT_TILE_SOURCE);
         mMapView.setBuiltInZoomControls(true);
+
+        //region get extra
+
+        //endregion
+        setMapController(this.getIntent().getDoubleExtra("latitude",-4349114),
+                         this.getIntent().getDoubleExtra("longitude",15292118));
+
+    }
+
+    private void setMapController(double latitude,double longitude)
+    {
+        Log.i("map","latitude = "+latitude);
+        Log.i("map","longitude = "+longitude);
         mMapController = (MapController) mMapView.getController();
-        mMapController.setZoom(13);
-        GeoPoint gPt = new GeoPoint(-4349114, 15292118);
+        mMapController.setZoom(14);
+        GeoPoint gPt = new GeoPoint(latitude,longitude);
         mMapController.setCenter(gPt);
     }
 }

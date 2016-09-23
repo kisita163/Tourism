@@ -29,9 +29,10 @@ public class HotelsActivity extends AppCompatActivity implements BaseSliderView.
     private SliderLayout demoSlider;
     private Button button;
     private XmlParser xmlParser;
-    private List<XmlParser.Entry> entries = null;
+    private List<XmlParser.Entry> provinces = null;
     private InputStream stream = null;
-    private List<XmlParser.Town> communes;
+    private XmlParser.City city;
+    private XmlParser.Town town;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +59,8 @@ public class HotelsActivity extends AppCompatActivity implements BaseSliderView.
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HotelsActivity.this, MapActivity.class);
+                intent.putExtra("latitude",town.getLatitude());
+                intent.putExtra("longitude",town.getLongitude());
                 startActivity(intent);
             }
         });
@@ -105,22 +108,23 @@ public class HotelsActivity extends AppCompatActivity implements BaseSliderView.
         LocationsAdapter adapter = new LocationsAdapter(this,entry.getCities());
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
-        //endregion
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Log.i("Spinner","City selected");
+                city =  getLocationData().getCities().get(position);
                 // region spinner commune
                 Spinner spinner = (Spinner) findViewById(R.id.commune);
                 // Create an ArrayAdapter using the string array and a default spinner layout
                 LocationsAdapter adapter = new LocationsAdapter(HotelsActivity.this, getLocationData().getCities().get(position).getTowns());
                 // Apply the adapter to the spinner
                 spinner.setAdapter(adapter);
-                //endregion
                 spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         Log.i("Spinner","Town selected");
+                        town = city.getTowns().get(position);
                     }
 
                     @Override
@@ -128,6 +132,7 @@ public class HotelsActivity extends AppCompatActivity implements BaseSliderView.
 
                     }
                 });
+                //endregion
             }
 
             @Override
@@ -135,13 +140,14 @@ public class HotelsActivity extends AppCompatActivity implements BaseSliderView.
 
             }
         });
+        //endregion
     }
 
     private XmlParser.Entry entriesIterator(String provinceName)
     {
         XmlParser.Entry entry = null;
 
-        for(XmlParser.Entry e:entries) // iterate on province
+        for(XmlParser.Entry e: provinces) // iterate on province
         {
             Log.i("Locations","province "+e.getName());
             if(e.getName().toLowerCase().equals(provinceName))
@@ -260,7 +266,7 @@ public class HotelsActivity extends AppCompatActivity implements BaseSliderView.
     private void loadXmlFromAssets()throws XmlPullParserException, IOException{
         try {
             InputStream stream  = getAssets().open("provinces.xml");
-            entries = xmlParser.parse(stream);
+            provinces = xmlParser.parse(stream);
             // Makes sure that the InputStream is closed after the app is
             // finished using it.
         } finally {
