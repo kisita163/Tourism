@@ -5,23 +5,33 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
-import com.daimajia.slider.library.Indicators.PagerIndicator;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
+import com.kisita.tourism.util.LocationsAdapter;
+import com.kisita.tourism.util.XmlParser;
 
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
+import java.util.List;
 
 public class HotelsActivity extends AppCompatActivity implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
     private SliderLayout demoSlider;
     private Button button;
+    private XmlParser xmlParser;
+    private List<XmlParser.Entry> entries = null;
+    private InputStream stream = null;
+    private List<XmlParser.Town> communes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +39,32 @@ public class HotelsActivity extends AppCompatActivity implements BaseSliderView.
         setContentView(R.layout.activity_hotels);
         demoSlider = (SliderLayout)findViewById(R.id.slider);
         button = (Button)findViewById(R.id.button);
+        xmlParser = new XmlParser();
 
+        // region load data from xml
+        try {
+            loadXmlFromAssets();
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        XmlParser.Entry entry = getLocationData();
+
+        // endregion
+
+        // region button
         button .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HotelsActivity.this,MapActivity.class);
+                Intent intent = new Intent(HotelsActivity.this, MapActivity.class);
                 startActivity(intent);
             }
         });
+
+        // endregion
+
+        // region slider
 
         HashMap<String,Integer> pic_files = new HashMap<String, Integer>();
 
@@ -68,27 +96,73 @@ public class HotelsActivity extends AppCompatActivity implements BaseSliderView.
         demoSlider.setDuration(4000);
         demoSlider.addOnPageChangeListener(this);
 
-        // region spinner
-        int communes = arrayInitializer();
+        // endregion
 
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        // region spinner ville
+
+        Spinner spinner = (Spinner) findViewById(R.id.ville);
         // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-           communes, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        LocationsAdapter adapter = new LocationsAdapter(this,entry.getCities());
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
         //endregion
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Log.i("Spinner","City selected");
+                // region spinner commune
+                Spinner spinner = (Spinner) findViewById(R.id.commune);
+                // Create an ArrayAdapter using the string array and a default spinner layout
+                LocationsAdapter adapter = new LocationsAdapter(HotelsActivity.this, getLocationData().getCities().get(position).getTowns());
+                // Apply the adapter to the spinner
+                spinner.setAdapter(adapter);
+                //endregion
+                spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        Log.i("Spinner","Town selected");
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
-    private int arrayInitializer() {
-        int array  = 0;
+    private XmlParser.Entry entriesIterator(String provinceName)
+    {
+        XmlParser.Entry entry = null;
+
+        for(XmlParser.Entry e:entries) // iterate on province
+        {
+            Log.i("Locations","province "+e.getName());
+            if(e.getName().toLowerCase().equals(provinceName))
+            {
+                Log.i("Locations","province found is "+e.getName());
+                entry = e;
+                break;
+            }
+        }
+
+        return entry;
+    }
+
+    private XmlParser.Entry getLocationData() {
+        XmlParser.Entry entry = null;
         switch (this.getIntent().getIntExtra("ACTIVITY", -1)) {
             case CongoProvinces.kinshasa:
-                array = R.array.kinshasa;
+                entry = entriesIterator("kinshasa");
                 break;
             case CongoProvinces.tshopo:
+
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Tshopo_(province)");
                 break;
             case CongoProvinces.sud_ubangi:
@@ -113,7 +187,7 @@ public class HotelsActivity extends AppCompatActivity implements BaseSliderView.
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Nord-Kivu");
                 break;
             case CongoProvinces.sud_kivu:
-                //webview.loadUrl("https://fr.wikipedia.org/wiki/Sud-Kivu");
+                entry = entriesIterator("sud-kivu");
                 break;
             case CongoProvinces.maniema:
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Maniema");
@@ -165,7 +239,7 @@ public class HotelsActivity extends AppCompatActivity implements BaseSliderView.
                 break;
 
         }
-        return R.array.kinshasa;
+        return entry;
     }
 
     @Override
@@ -182,4 +256,18 @@ public class HotelsActivity extends AppCompatActivity implements BaseSliderView.
 
     @Override
     public void onPageScrollStateChanged(int state) {}
+
+    private void loadXmlFromAssets()throws XmlPullParserException, IOException{
+        try {
+            InputStream stream  = getAssets().open("provinces.xml");
+            entries = xmlParser.parse(stream);
+            // Makes sure that the InputStream is closed after the app is
+            // finished using it.
+        } finally {
+            if (stream != null) {
+                stream.close();
+            }
+        }
+    }
+
 }

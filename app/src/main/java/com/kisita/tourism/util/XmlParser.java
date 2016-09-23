@@ -133,6 +133,10 @@ public class XmlParser {
         public void setCities(List<City> cities) {
             this.cities = cities;
         }
+
+        public List<City> getCities() {
+            return cities;
+        }
     }
 
     // endregion
@@ -164,7 +168,7 @@ public class XmlParser {
                 }
             }
         }
-        province.print();
+        //province.print();
         return province;
     }
 
