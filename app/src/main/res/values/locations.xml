@@ -36,7 +36,7 @@
         <item>Selembao</item>
     </string-array>
     <!-- Sud kivu -->
-    <string-array name="sud-kivu">
+    <string-array name="sud_kivu">
         <item>Baraka</item>
         <item>Bukavu</item>
         <item>Kamituga</item>
