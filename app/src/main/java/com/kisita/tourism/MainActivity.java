@@ -3,10 +3,6 @@ package com.kisita.tourism;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 import android.widget.TabHost;
 
 public class MainActivity extends TabActivity {
@@ -27,17 +23,11 @@ public class MainActivity extends TabActivity {
     private void initializeActivities(int province)
     {
         // region Activities
-        hotels = new Intent(this, HotelsActivity.class);
+        hotels = new Intent(this, FormActivity.class);
         hotels.putExtra("ACTIVITY",province);
-
-        restoration = new Intent(this, RestorationActivity.class);
-        restoration.putExtra("ACTIVITY",province);
 
         history = new Intent(this, HistoryActivity.class);
         history.putExtra("ACTIVITY",province);
-
-        event = new Intent(this, EventActivity.class);
-        event.putExtra("ACTIVITY",province);
     }
 
     private void initializeTabs()

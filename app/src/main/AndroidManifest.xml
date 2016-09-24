@@ -28,20 +28,12 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name=".HotelsActivity"
+            android:name=".FormActivity"
             android:label="@string/title_activity_hotels" >
-        </activity>
-        <activity
-            android:name=".RestorationActivity"
-            android:label="@string/title_activity_restauration" >
         </activity>
         <activity
             android:name=".HistoryActivity"
             android:label="@string/title_activity_history" >
-        </activity>
-        <activity
-            android:name=".EventActivity"
-            android:label="@string/title_activity_event" >
         </activity>
         <activity
             android:name=".StartActivity"

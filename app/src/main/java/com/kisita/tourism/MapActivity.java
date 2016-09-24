@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 
 public class MapActivity extends Activity {
     private MapView mMapView;
-    private ItemizedIconOverlay<OverlayItem> markerOverlays;
+    private ItemizedIconOverlay<OverlayItem> markerOverlay;
     private MapController mMapController;
     private OverlayItem start;
 
@@ -32,12 +33,42 @@ public class MapActivity extends Activity {
         mMapView.setBuiltInZoomControls(true);
         mMapView.setMultiTouchControls(true);
 
-        //region get extra
+        setMapController(this.getIntent().getDoubleExtra("latitude", -4349114),
+                this.getIntent().getDoubleExtra("longitude", 15292118));
 
+        //region set itimized overlay
+        setItimizedOverlay();
         //endregion
-        setMapController(this.getIntent().getDoubleExtra("latitude",-4349114),
-                         this.getIntent().getDoubleExtra("longitude",15292118));
 
+    }
+
+    private void setItimizedOverlay() {
+        // To take from the data base
+        final ArrayList<OverlayItem> items = new ArrayList<>();
+        items.add(new OverlayItem("Gombe", "SampleDescription", new GeoPoint(-4.309535 ,15.292631)));
+        items.add(new OverlayItem("Ngaliema", "SampleDescription", new GeoPoint(-4.372471, 15.254589)));
+        items.add(new OverlayItem("Kintambo", "SampleDescription", new GeoPoint(-4.343598,15.267756)));
+
+        			/* OnTapListener for the Markers, shows a simple Toast. */
+        this.markerOverlay = new ItemizedIconOverlay<>(items,
+                new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
+                    @Override
+                    public boolean onItemSingleTapUp(final int index, final OverlayItem item) {
+                        Toast.makeText(
+                                MapActivity.this,
+                                item.getTitle() , Toast.LENGTH_SHORT).show();
+                        return true; // We 'handled' this event.
+                    }
+
+                    @Override
+                    public boolean onItemLongPress(final int index, final OverlayItem item) {
+                        Toast.makeText(
+                                MapActivity.this,
+                                item.getTitle() , Toast.LENGTH_LONG).show();
+                        return false;
+                    }
+                }, getApplicationContext());
+        this.mMapView.getOverlays().add(this.markerOverlay);
     }
 
     private void setMapController(double latitude,double longitude)

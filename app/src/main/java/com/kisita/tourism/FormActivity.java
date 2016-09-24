@@ -25,7 +25,7 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 
-public class HotelsActivity extends AppCompatActivity implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
+public class FormActivity extends AppCompatActivity implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
     private SliderLayout demoSlider;
     private Button button;
     private XmlParser xmlParser;
@@ -58,7 +58,7 @@ public class HotelsActivity extends AppCompatActivity implements BaseSliderView.
         button .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HotelsActivity.this, MapActivity.class);
+                Intent intent = new Intent(FormActivity.this, MapActivity.class);
                 intent.putExtra("latitude",town.getLatitude());
                 intent.putExtra("longitude",town.getLongitude());
                 startActivity(intent);
@@ -117,7 +117,7 @@ public class HotelsActivity extends AppCompatActivity implements BaseSliderView.
                 // region spinner commune
                 Spinner spinner = (Spinner) findViewById(R.id.commune);
                 // Create an ArrayAdapter using the string array and a default spinner layout
-                LocationsAdapter adapter = new LocationsAdapter(HotelsActivity.this, getLocationData().getCities().get(position).getTowns());
+                LocationsAdapter adapter = new LocationsAdapter(FormActivity.this, getLocationData().getCities().get(position).getTowns());
                 // Apply the adapter to the spinner
                 spinner.setAdapter(adapter);
                 spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
