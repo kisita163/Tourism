@@ -5,15 +5,23 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapController;
 import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.ItemizedIconOverlay;
+import org.osmdroid.views.overlay.Overlay;
+import org.osmdroid.views.overlay.OverlayItem;
+
+import java.util.ArrayList;
 
 public class MapActivity extends Activity {
     private MapView mMapView;
+    private ItemizedIconOverlay<OverlayItem> markerOverlays;
     private MapController mMapController;
+    private OverlayItem start;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -22,6 +30,7 @@ public class MapActivity extends Activity {
         mMapView = (MapView) findViewById(R.id.mapview);
         mMapView.setTileSource(TileSourceFactory.DEFAULT_TILE_SOURCE);
         mMapView.setBuiltInZoomControls(true);
+        mMapView.setMultiTouchControls(true);
 
         //region get extra
 

@@ -211,7 +211,7 @@ public class HotelsActivity extends AppCompatActivity implements BaseSliderView.
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Kasaï_(province)");
                 break;
             case CongoProvinces.kwilu:
-                //webview.loadUrl("https://fr.wikipedia.org/wiki/Kwilu_(province)");
+                entry = entriesIterator("kwilu");
                 break;
             case CongoProvinces.kasai_central:
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Kasaï-Central");

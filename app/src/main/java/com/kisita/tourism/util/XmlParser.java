@@ -33,7 +33,7 @@ public class XmlParser {
         List provinces = new ArrayList();
 
         parser.require(XmlPullParser.START_TAG, ns, "pays"); // Test if the current event is of the given type and if the namespace and name do match.
-        int pNumber = 2;
+        int pNumber = 3;
         int k = 0;
 
         while(pNumber > 0)
