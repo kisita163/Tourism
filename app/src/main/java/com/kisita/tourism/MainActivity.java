@@ -24,7 +24,7 @@ public class MainActivity extends TabActivity {
     {
         // region Activities
         hotels = new Intent(this, FormActivity.class);
-        hotels.putExtra("ACTIVITY",province);
+        hotels.putExtra("ACTIVITY", province);
 
         history = new Intent(this, HistoryActivity.class);
         history.putExtra("ACTIVITY",province);
