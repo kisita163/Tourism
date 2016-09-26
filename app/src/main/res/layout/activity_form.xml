@@ -12,7 +12,8 @@
     android:orientation="vertical">
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:background="@drawable/hotels">
 
 
         <com.daimajia.slider.library.SliderLayout
@@ -24,48 +25,30 @@
             custom:pager_animation_span="1100"
             android:layout_height="150dp"
             />
-        <TableLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/table_layout"
-            android:layout_margin="20dp"
-            android:layout_below="@id/slider">
 
-            <TableRow
-                android:background="@color/mai_ndombe"
-                android:layout_width="fill_parent">
 
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:text="@string/city"
-                    android:layout_gravity="center"
-                    android:layout_weight="0.5"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="20dp"/>
+
+
+
                 <Spinner
+                    android:layout_below="@id/slider"
+                    android:layout_marginTop="16dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
                     android:id="@+id/ville"/>
-            </TableRow>
-            <TableRow
-                android:background="@color/mai_ndombe"
-                android:layout_width="fill_parent"
-                android:layout_marginTop="@dimen/activity_vertical_margin">
 
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:text="@string/town"
-                    android:layout_gravity="center"
-                    android:layout_weight="0.5"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="20dp"/>
+
+
                 <Spinner
+                    android:layout_marginTop="16dp"
+                    android:layout_below="@id/ville"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
                     android:id="@+id/commune"/>
-            </TableRow>
 
-        </TableLayout>
+
 
 
         <Button

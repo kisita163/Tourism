@@ -33,7 +33,7 @@ public class XmlParser {
         List provinces = new ArrayList();
 
         parser.require(XmlPullParser.START_TAG, ns, "pays"); // Test if the current event is of the given type and if the namespace and name do match.
-        int pNumber = 3;
+        int pNumber = 4;
         int k = 0;
 
         while(pNumber > 0)
@@ -52,13 +52,21 @@ public class XmlParser {
     // region class to put elsewhere
 
     public static class Town{
-        private double longitude = 0;
-        private double latitude = 0;
         private String name;
 
         public Town(String name){
             this.name = name;
         }
+
+        public String getName() {
+            return name;
+        }
+
+    }
+
+    public static class  City{
+        private double longitude = 0;
+        private double latitude = 0;
 
         public double getLongitude() {
             return longitude;
@@ -68,10 +76,6 @@ public class XmlParser {
             return latitude;
         }
 
-        public String getName() {
-            return name;
-        }
-
         public void setLongitude(double longitude) {
             this.longitude = longitude;
         }
@@ -79,15 +83,20 @@ public class XmlParser {
         public void setLatitude(double latitude) {
             this.latitude = latitude;
         }
-    }
 
-    public static class  City{
         private String name;
         private  List<Town> towns = null; // Une ville compte des communes
 
         public City(String name,List<Town> towns)
         {
             this.name = name;
+            this.towns = towns;
+        }
+
+        public City(String name, double latitude, double longitude, List<Town> towns) {
+            this.name = name;
+            this.latitude = latitude;
+            this.longitude = longitude;
             this.towns = towns;
         }
 
@@ -103,7 +112,6 @@ public class XmlParser {
     public static class Entry {
         private String name = "";
         private List<City> cities = null; // Une liste de villes contient des villes
-        private List<String> territories = null; // Les territoires n'ont pas de villes
 
 
         private Entry(String name) {
@@ -121,7 +129,7 @@ public class XmlParser {
                 for(Town t:c.getTowns())
                 {
                     System.out.println("* " + t.getName());
-                    System.out.println("** " + t.getLatitude() + " " + t.getLongitude());
+                    System.out.println("** " + c.getLatitude() + " " + c.getLongitude());
                 }
             }
         }
@@ -152,11 +160,14 @@ public class XmlParser {
             parser.next();
 
             if(parser.getName() != null ) {
-                if(parser.getName().equals("ville") || parser.getName().equals("territoire") ){
+                if(parser.getName().equals("ville") || parser.getName().equals("district") ){
                     if (parser.getEventType() == XmlPullParser.START_TAG) {
-                        Log.i("ville", "ville = " + parser.getAttributeValue(0));
+                        Log.i("ville", "ville/district = " + parser.getAttributeValue(0));
                         // get the list of town
-                        cities.add(new City(parser.getAttributeValue(0),readCity(parser)));
+                        cities.add(new City(parser.getAttributeValue(0),
+                                            Double.parseDouble(parser.getAttributeValue(1)),
+                                            Double.parseDouble(parser.getAttributeValue(2)),
+                                            readCity(parser)));
                         // process cities and then add them to the province
                         province.setCities(cities);
                     }
@@ -179,15 +190,15 @@ public class XmlParser {
         while(true) {
             parser.next();
             if (parser.getName() != null) {
-                if (parser.getName().equals("commune")) {
+                if (parser.getName().equals("commune") || parser.getName().equals("territoire")) {
                     if (parser.getEventType() == XmlPullParser.START_TAG) {
-                        Log.i("communes", "commune = " + parser.getAttributeValue(0));
+                        Log.i("communes", "commune/territoire = " + parser.getAttributeValue(0));
                         towns.add(readTown(parser.getAttributeValue(0),parser));
 
                     }
                 }
-                if (parser.getName().equals("ville") || parser.getName().equals("territoire")) {
-                    Log.i("communes", "end of ville/territoire");
+                if (parser.getName().equals("ville") || parser.getName().equals("district")) {
+                    Log.i("communes", "end of ville/district");
                     break;
                 }
             }
@@ -198,42 +209,6 @@ public class XmlParser {
     private Town readTown(String name,XmlPullParser parser) throws XmlPullParserException, IOException {
 
         Town town = new Town(name);
-        char coord = 0;
-
-        while(true)
-        {
-            parser.next();
-            if(parser.getName() != null){
-                if (parser.getEventType() == XmlPullParser.START_TAG) {
-                    if (parser.getName().equals("latitude")) {
-                        Log.i("latitude", "latitude found");
-                        coord=1;
-                    }
-
-                    if (parser.getName().equals("longitude")) {
-                        Log.i("longitude", "longitude found");
-                        coord=2;
-                    }
-                }
-                if (parser.getName().equals("commune")) {
-                    Log.i("geo", "end of commune");
-                    break;
-                }
-            }
-            else{
-                if(coord == 1)
-                {
-                    Log.i("latitude", "latitude = " + parser.getText());
-                    town.setLatitude(Double.valueOf(parser.getText()));
-                }
-                else if(coord == 2) {
-                    Log.i("longitude", "longitude = " + parser.getText());
-                    town.setLongitude(Double.valueOf(parser.getText()));
-                }
-                coord = 0;
-            }
-        }
-
         return town;
     }
 }

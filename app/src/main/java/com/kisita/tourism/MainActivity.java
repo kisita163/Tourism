@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.widget.TabHost;
 
 public class MainActivity extends TabActivity {
-    private Intent hotels;
-    private Intent restoration;
-    private Intent event;
+    private Intent form_hotels;
+    private Intent form_restaurants;
+    private Intent form_events;
     private Intent history;
 
     @Override
@@ -23,8 +23,17 @@ public class MainActivity extends TabActivity {
     private void initializeActivities(int province)
     {
         // region Activities
-        hotels = new Intent(this, FormActivity.class);
-        hotels.putExtra("ACTIVITY", province);
+        form_hotels = new Intent(this, FormActivity.class);
+        form_hotels.putExtra("ACTIVITY", province);
+        form_hotels.putExtra("TYPE","hotels");
+
+        form_restaurants = new Intent(this, FormActivity.class);
+        form_restaurants.putExtra("ACTIVITY", province);
+        form_restaurants.putExtra("TYPE","restaurants");
+
+        form_events = new Intent(this, FormActivity.class);
+        form_events.putExtra("ACTIVITY", province);
+        form_events.putExtra("TYPE","events");
 
         history = new Intent(this, HistoryActivity.class);
         history.putExtra("ACTIVITY",province);
@@ -39,21 +48,21 @@ public class MainActivity extends TabActivity {
 
 
         spec = getTabHost().newTabSpec("tag1");
-        spec.setContent(hotels);
+        spec.setContent(form_hotels);
         spec.setIndicator("", getResources().getDrawable(R.mipmap.hotels));
         getTabHost().addTab(spec);
 
         /////
 
         spec = getTabHost().newTabSpec("tag2");
-        spec.setContent(hotels);
+        spec.setContent(form_restaurants);
         spec.setIndicator("", getResources().getDrawable(R.mipmap.restaurant_red_round));
         getTabHost().addTab(spec);
 
         /////
 
         spec = getTabHost().newTabSpec("tag3");
-        spec.setContent(hotels);
+        spec.setContent(form_events);
         spec.setIndicator("",getResources().getDrawable(R.mipmap.event));
         getTabHost().addTab(spec);
     }

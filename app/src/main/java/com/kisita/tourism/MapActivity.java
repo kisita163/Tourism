@@ -3,9 +3,6 @@ package com.kisita.tourism;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.kisita.tourism.util.DBAdapter;
@@ -16,7 +13,6 @@ import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapController;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.ItemizedIconOverlay;
-import org.osmdroid.views.overlay.Overlay;
 import org.osmdroid.views.overlay.OverlayItem;
 
 import java.util.ArrayList;
@@ -39,7 +35,8 @@ public class MapActivity extends Activity {
 
         dbAdapter = new DBAdapter(this);
         dbAdapter.open();
-        dbAdapter.insertData(new DBEntry("Continental",-4.304346,15.312195,"hotel 3 etoiles","kinshasa"),"hotels");
+        //dbAdapter.deleteAll();
+        //dbAdapter.insertData(new DBEntry("Memling","hotels",-4.304346,15.312195,"hotel 3 etoiles","kinshasa"));
 
         setMapController(this.getIntent().getDoubleExtra("latitude", -4349114),
                 this.getIntent().getDoubleExtra("longitude", 15292118));
@@ -52,17 +49,23 @@ public class MapActivity extends Activity {
 
     private void setItimizedOverlay() {
 
-        List<String> test = new ArrayList<>();
-        test = dbAdapter.selectAllStudents();
-        // To take from the data base
+        List<DBEntry> points = new ArrayList<>();
         final ArrayList<OverlayItem> items = new ArrayList<>();
-        items.add(new OverlayItem("Gombe", "SampleDescription", new GeoPoint(-4.309535 ,15.292631)));
-        items.add(new OverlayItem("Ngaliema", "SampleDescription", new GeoPoint(-4.372471, 15.254589)));
-        items.add(new OverlayItem("Kintambo", "SampleDescription", new GeoPoint(-4.343598,15.267756)));
 
+        Log.i("map","Extra received from tab are : "+this.getIntent().getStringExtra("type")+
+                                                    " "+this.getIntent().getStringExtra("province"));
 
+        points = dbAdapter.selectEntry(this.getIntent().getStringExtra("type"),
+                                       this.getIntent().getStringExtra("province"));
+        // To take from the data base
 
-        			/* OnTapListener for the Markers, shows a simple Toast. */
+        for(int iter = 0; iter < points.size();iter++){
+            items.add(new OverlayItem(points.get(iter).getName(),
+                                      points.get(iter).getDescription(),
+                                      new GeoPoint(points.get(iter).getLatitude(),points.get(iter).getLongitude())));
+        }
+
+        /* OnTapListener for the Markers, shows a simple Toast. */
         this.markerOverlay = new ItemizedIconOverlay<>(items,
                 new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
                     @Override

@@ -7,8 +7,8 @@ import java.util.Date;
  */
 public class Event extends DBEntry {
     private Date date;
-    public Event(String name, double latitude, double longitude, String description, String province,Date date) {
-        super(name, latitude, longitude, description, province);
+    public Event(String name,String type, double latitude, double longitude, String description, String province,Date date) {
+        super(name,type,latitude, longitude, description, province);
         this.date = date;
     }
 }

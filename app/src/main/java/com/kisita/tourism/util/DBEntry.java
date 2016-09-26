@@ -5,14 +5,22 @@ package com.kisita.tourism.util;
  */
 public class DBEntry {
     private String name;
+    private String type;
     private double latitude;
     private double longitude;
-    private String province;
+    private String province="";
     private String description;
 
-
-    public DBEntry(String name, double latitude, double longitude, String description, String province) {
+    public DBEntry(String name, double latitude, double longitude, String description) {
         this.name = name;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.description = description;
+    }
+
+    public DBEntry(String name, String type,double latitude, double longitude, String description, String province) {
+        this.name = name;
+        this.type = type;
         this.latitude = latitude;
         this.longitude = longitude;
         this.description = description;
@@ -37,5 +45,9 @@ public class DBEntry {
 
     public String getDescription() {
         return description;
+    }
+
+    public String getType() {
+        return type;
     }
 }

@@ -2,357 +2,188 @@
 
 <pays name="rdcongo">
 	<!-- Kwilu -->
-	<province name="kwilu">
-		<ville name="Baraka">
-			<commune  name="Kalundja">
-				<geo>
-					<latitude>-4.09386</latitude>
-					<longitude>29.082670</longitude>
-				</geo>
+	<province name="kongo-central">
+		<ville name="Matadi" lat="-5.850872" long="13.462738">
+			<commune  name="Matadi">
 			</commune>
-			<commune  name="Katanga">
-				<geo>
-					<latitude>-4.09386</latitude>
-					<longitude>29.082670</longitude>
-				</geo>
+			<commune  name="Mvuzi">
 			</commune>
-			<commune  name="Baraka centre">
-				<geo>
-					<latitude>-4.09386</latitude>
-					<longitude>29.082670</longitude>
-				</geo>
+			<commune  name="Nzanza">
 			</commune>
 		</ville>
-		<ville name="Bukavu">
-			<commune  name="Bagira">
-				<geo>
-					<latitude>-2.508115 </latitude>
-					<longitude>28.864131</longitude>
-				</geo>
+		<ville name="Boma" lat="-5.923035" long="12.36357">
+			<commune  name="Kabondo">
 			</commune>
-			<commune  name="Ibanda">
-				<geo>
-					<latitude>-2.508115 </latitude>
-					<longitude>28.864131</longitude>
-				</geo>
+			<commune  name="Kalamu">
 			</commune>
-			<commune  name="Kadutu">
-				<geo>
-					<latitude>-2.508115 </latitude>
-					<longitude>28.864131</longitude>
-				</geo>
+			<commune  name="Nzadi">
 			</commune>
-			<commune  name="Kasha">
-				<geo>
-					<latitude>-2.508115 </latitude>
-					<longitude>28.864131</longitude>
-				</geo>
-			</commune>
+			<territoire  name="Moanda">
+			</territoire>
 		</ville>
-		<ville name="Kamituga">
-			<commune  name="Bitanga">
-				<geo>
-					<latitude>-3.5390412</latitude>
-					<longitude>27.693349</longitude>
-				</geo>
-			</commune>
-			<commune  name="Mobale">
-				<geo>
-					<latitude>-3.5390412</latitude>
-					<longitude>27.693349</longitude>
-				</geo>
-			</commune>
-		</ville>
-		<ville name="Shabunda">
-			<commune  name="Kizikibi">
-				<geo>
-					<latitude>-2.694269</latitude>
-					<longitude>27.344019</longitude>
-				</geo>
-			</commune>
-			<commune  name="Lupinga">
-				<geo>
-					<latitude>-2.694269</latitude>
-					<longitude>27.344019</longitude>
-				</geo>
-			</commune>
-			<commune  name="Ngalubue">
-				<geo>
-					<latitude>-2.694269</latitude>
-					<longitude>27.344019</longitude>
-				</geo>
-			</commune>
-		</ville>
-		<ville name="Uvira">
-			<commune  name="Kalundu">
-				<geo>
-					<latitude>-3.3728836</latitude>
-					<longitude>29.144879</longitude>
-				</geo>
-			</commune>
-			<commune  name="Kamvivira">
-				<geo>
-					<latitude>-3.3728836</latitude>
-					<longitude>29.144879</longitude>
-				</geo>
-			</commune>
-			<commune  name="Mulongwe">
-				<geo>
-					<latitude>-3.3728836</latitude>
-					<longitude>29.144879</longitude>
-				</geo>
-			</commune>
-		</ville>
+		<district name="Bas-fleuve" lat="-5.227717" long="13.049011">
+			<territoire  name="Lukula">
+			</territoire>
+			<territoire  name="Tshela">
+			</territoire>
+			<territoire  name="Seke-banza">
+
+			</territoire>
+			<territoire  name="Kasha">
+			</territoire>
+		</district>
+		<district name="Cataractes" lat="-5.3863004" long="14.4723301">
+			<territoire  name="Mbanza-Ngungu">
+			</territoire>
+			<territoire  name="Luozi">
+			</territoire>
+			<territoire  name="Songololo">
+			</territoire>
+		</district>
+		<district name="Lukaya" lat="-4.795417" long="15.26825">
+			<territoire  name="Kasangulu">
+			</territoire>
+			<territoire  name="Madimba">
+			</territoire>
+			<territoire  name="Kimvula">
+			</territoire>
+		</district>
 	</province>
 	<!-- Sud kivu -->
-	<province name="sud-kivu">
-		<ville name="Baraka">
+	<province name="sud-kivu" >
+		<ville name="Baraka" lat="-4.09386" long="29.082670">
 			<commune  name="Kalundja">
-				<geo>
-					<latitude>-4.09386</latitude>
-					<longitude>29.082670</longitude>
-				</geo>
 			</commune>
 			<commune  name="Katanga">
-				<geo>
-					<latitude>-4.09386</latitude>
-					<longitude>29.082670</longitude>
-				</geo>
 			</commune>
 			<commune  name="Baraka centre">
-				<geo>
-					<latitude>-4.09386</latitude>
-					<longitude>29.082670</longitude>
-				</geo>
 			</commune>
 		</ville>
-		<ville name="Bukavu">
+		<ville name="Bukavu" lat="-2.508115" long="28.864131">
 			<commune  name="Bagira">
-				<geo>
-					<latitude>-2.508115 </latitude>
-					<longitude>28.864131</longitude>
-				</geo>
 			</commune>
 			<commune  name="Ibanda">
-				<geo>
-					<latitude>-2.508115 </latitude>
-					<longitude>28.864131</longitude>
-				</geo>
 			</commune>
 			<commune  name="Kadutu">
-				<geo>
-					<latitude>-2.508115 </latitude>
-					<longitude>28.864131</longitude>
-				</geo>
 			</commune>
 			<commune  name="Kasha">
-				<geo>
-					<latitude>-2.508115 </latitude>
-					<longitude>28.864131</longitude>
-				</geo>
 			</commune>
 		</ville>
-		<ville name="Kamituga">
+		<ville name="Kamituga" lat="-3.5390412" long="27.693349">
 			<commune  name="Bitanga">
-				<geo>
-					<latitude>-3.5390412</latitude>
-					<longitude>27.693349</longitude>
-				</geo>
 			</commune>
 			<commune  name="Mobale">
-				<geo>
-					<latitude>-3.5390412</latitude>
-					<longitude>27.693349</longitude>
-				</geo>
 			</commune>
 		</ville>
-		<ville name="Shabunda">
+		<ville name="Shabunda" lat="-2.694269" long="27.344019">
 			<commune  name="Kizikibi">
-				<geo>
-					<latitude>-2.694269</latitude>
-					<longitude>27.344019</longitude>
-				</geo>
 			</commune>
 			<commune  name="Lupinga">
-				<geo>
-					<latitude>-2.694269</latitude>
-					<longitude>27.344019</longitude>
-				</geo>
 			</commune>
 			<commune  name="Ngalubue">
-				<geo>
-					<latitude>-2.694269</latitude>
-					<longitude>27.344019</longitude>
-				</geo>
 			</commune>
 		</ville>
-		<ville name="Uvira">
+		<ville name="Uvira" lat="-3.3728836" long="29.144879">
 			<commune  name="Kalundu">
-				<geo>
-					<latitude>-3.3728836</latitude>
-					<longitude>29.144879</longitude>
-				</geo>
 			</commune>
 			<commune  name="Kamvivira">
-				<geo>
-					<latitude>-3.3728836</latitude>
-					<longitude>29.144879</longitude>
-				</geo>
 			</commune>
 			<commune  name="Mulongwe">
-				<geo>
-					<latitude>-3.3728836</latitude>
-					<longitude>29.144879</longitude>
-				</geo>
 			</commune>
 		</ville>
 	</province>
+	<!-- Kinshasa -->
 	<province name="Kinshasa">
-		<ville name="Kinshasa">
+		<ville name="Kinshasa" lat="-4.339907" long="15.287433" >
 			<commune  name="Bandalungwa">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Barumbu">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Bumbu">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Gombe">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Kalamu">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Kasa-Vubu">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Kimbanseke">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Kinshasa">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Kintambo">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Kisenso">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Lemba">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Limete">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Lingwala">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Makala">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Maluku">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Masina">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Matete">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Mont-Ngafula">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Ndjili">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Ngaba">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Ngaliema">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Ngiri-Ngiri">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Nsele">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
 			<commune name="Selembao">
-				<geo>
-					<latitude>-4.339907</latitude>
-					<longitude>15.287433</longitude>
-				</geo>
 			</commune>
+		</ville>
+	</province>
+	<!-- Nord kivu -->
+	<province name="nord-kivu">
+		<ville name="Beni" lat="0.499012" long="29.452754">
+			<commune  name="Beni">
+			</commune>
+			<commune  name="Bungulu">
+			</commune>
+			<commune  name="Ruwenzori">
+			</commune>
+			<commune  name="Muhekera">
+			</commune>
+		</ville>
+		<ville name="Butembo" lat="0.114047" long="29.301801">
+			<commune  name="Bulengera">
+			</commune>
+			<commune  name="Kimemi">
+			</commune>
+			<commune  name="Mususa">
+			</commune>
+			<commune  name="Vutamba">
+			</commune>
+		</ville>
+		<ville name="Goma" lat="-1.658501" long="29.220455">
+			<commune  name="Goma">
+			</commune>
+			<commune  name="Karisimbi">
+			</commune>
+		</ville>
+		<ville name="Beni(Territoire)" lat="0.499012" long="29.452754">
+		</ville>
+		<ville name="Lubero" lat="-0.15496" long="29.243701">
+		</ville>
+		<ville name="Rutshuru" lat="-1.18557" long="29.446951">
+		</ville>
+		<ville name="Masisi" lat="-1.398429" long="28.815981">
+		</ville>
+		<ville name="Nyirangongo" lat="-1.522038" long="29.249457">
+		</ville>
+		<ville name="Walikale" lat="-1.522038" long="29.249457">
 		</ville>
 	</province>
 </pays>

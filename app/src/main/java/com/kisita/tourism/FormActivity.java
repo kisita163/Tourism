@@ -33,14 +33,17 @@ public class FormActivity extends AppCompatActivity implements BaseSliderView.On
     private InputStream stream = null;
     private XmlParser.City city;
     private XmlParser.Town town;
+    private String tabType = "";
+    private String province = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hotels);
+        setContentView(R.layout.activity_form);
         demoSlider = (SliderLayout)findViewById(R.id.slider);
         button = (Button)findViewById(R.id.button);
         xmlParser = new XmlParser();
+        tabType = this.getIntent().getStringExtra("TYPE");
 
         // region load data from xml
         try {
@@ -59,8 +62,12 @@ public class FormActivity extends AppCompatActivity implements BaseSliderView.On
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(FormActivity.this, MapActivity.class);
-                intent.putExtra("latitude",town.getLatitude());
-                intent.putExtra("longitude",town.getLongitude());
+                intent.putExtra("latitude",city.getLatitude());
+                intent.putExtra("longitude",city.getLongitude());
+                intent.putExtra("type",tabType);
+                intent.putExtra("level2",town.getName());
+                intent.putExtra("level1",city.getName());
+                intent.putExtra("province",province);
                 startActivity(intent);
             }
         });
@@ -117,21 +124,28 @@ public class FormActivity extends AppCompatActivity implements BaseSliderView.On
                 // region spinner commune
                 Spinner spinner = (Spinner) findViewById(R.id.commune);
                 // Create an ArrayAdapter using the string array and a default spinner layout
-                LocationsAdapter adapter = new LocationsAdapter(FormActivity.this, getLocationData().getCities().get(position).getTowns());
-                // Apply the adapter to the spinner
-                spinner.setAdapter(adapter);
-                spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        Log.i("Spinner","Town selected");
-                        town = city.getTowns().get(position);
-                    }
+                if(city.getTowns().size() > 0) {
+                    spinner.setVisibility(View.VISIBLE);
+                    LocationsAdapter adapter = new LocationsAdapter(FormActivity.this, getLocationData().getCities().get(position).getTowns());
+                    // Apply the adapter to the spinner
+                    spinner.setAdapter(adapter);
+                    spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            Log.i("Spinner", "Town selected");
+                            town = city.getTowns().get(position);
+                        }
 
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
 
-                    }
-                });
+                        }
+                    });
+                }
+                else
+                {
+                    spinner.setVisibility(View.INVISIBLE);
+                }
                 //endregion
             }
 
@@ -165,79 +179,108 @@ public class FormActivity extends AppCompatActivity implements BaseSliderView.On
         XmlParser.Entry entry = null;
         switch (this.getIntent().getIntExtra("ACTIVITY", -1)) {
             case CongoProvinces.kinshasa:
+                province = "kinshasa";
                 entry = entriesIterator("kinshasa");
                 break;
             case CongoProvinces.tshopo:
-
+                province = "tshopo";
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Tshopo_(province)");
                 break;
             case CongoProvinces.sud_ubangi:
+                province = "sud_ubangi";
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Sud-Ubangi");
                 break;
             case CongoProvinces.nord_ubangi:
+                province = "nord_ubangi";
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Nord-Ubangi");
                 break;
             case CongoProvinces.mongala:
+                province = "mongala";
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Mongala_(province)");
                 break;
             case CongoProvinces.bas_uele:
+                province = "bas_uele";
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Bas-Uele");
                 break;
             case CongoProvinces.haut_uele:
+                province = "haut_uele";
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Haut-Uele");
                 break;
             case CongoProvinces.ituri:
+                province = "ituri";
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Ituri");
                 break;
             case CongoProvinces.nord_kivu:
+                province = "nord_kivu";
+                entry = entriesIterator("nord-kivu");
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Nord-Kivu");
                 break;
             case CongoProvinces.sud_kivu:
+                province = "sud_kivu";
                 entry = entriesIterator("sud-kivu");
                 break;
             case CongoProvinces.maniema:
+                province = "maniema";
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Maniema");
                 break;
             case CongoProvinces.sankuru:
+                province = "sankuru";
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Sankuru_(province)");
                 break;
             case CongoProvinces.mai_ndombe:
+                province = "mai_ndombe";
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Mai-Ndombe_(province)");
                 break;
             case CongoProvinces.tshuapa:
+                province = "tshuapa";
                // webview.loadUrl("https://fr.wikipedia.org/wiki/Mai-Ndombe_(province)");
                 break;
             case CongoProvinces.kasai:
+                province = "kasai";
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Kasaï_(province)");
                 break;
             case CongoProvinces.kwilu:
+                province = "kwilu";
                 entry = entriesIterator("kwilu");
                 break;
             case CongoProvinces.kasai_central:
+                province = "kasai_central";
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Kasaï-Central");
                 break;
             case CongoProvinces.kasai_oriental:
+                province = "kasai_oriental";
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Kasaï-Oriental");
                 break;
             case CongoProvinces.lomami:
+                province = "lomami";
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Lomami_(province)");
                 break;
             case CongoProvinces.haut_lomami:
+                province = "haut_lomami";
                // webview.loadUrl("https://fr.wikipedia.org/wiki/Haut-Lomami");
                 break;
             case CongoProvinces.tanganyka:
+                province = "tanganyka";
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Tanganyika_(province)");
                 break;
             case CongoProvinces.haut_katanga:
+                province = "haut_katanga";
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Haut-Katanga");
                 break;
             case CongoProvinces.lualaba:
+                province = "lualaba";
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Lualaba_(province)");
                 break;
             case CongoProvinces.kwango:
+                province = "kwango";
                 //webview.loadUrl("https://fr.wikipedia.org/wiki/Kwango_(province)");
                 break;
             case CongoProvinces.kongo_central:
+                province = "kongo_central";
+                entry = entriesIterator("kongo-central");
+                break;
+            case CongoProvinces.equateur:
+                province = "equateur";
                 //webview.loadUrl("http://www.kongocentral.net/");
                 break;
             default:

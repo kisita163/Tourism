@@ -103,4 +103,6 @@ public class LocationsAdapter extends ArrayAdapter{
     }
 
     // endregion
+
+
 }

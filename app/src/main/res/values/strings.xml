@@ -21,6 +21,6 @@
 
     <string name="title_activity_congo">CongoActivity</string>
     <string name="title_activity_map">MapActivity</string>
-    <string name="city">Ville</string>
-    <string name="town">Commune</string>
+    <string name="city">Ville/district</string>
+    <string name="town">Commune/Territoire</string>
 </resources>
