@@ -23,4 +23,5 @@
     <string name="title_activity_map">MapActivity</string>
     <string name="city">Ville/district</string>
     <string name="town">Commune/Territoire</string>
+    <string name="title_activity_google_maps">Map</string>
 </resources>

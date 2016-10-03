@@ -61,7 +61,7 @@ public class FormActivity extends AppCompatActivity implements BaseSliderView.On
         button .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FormActivity.this, MapActivity.class);
+                Intent intent = new Intent(FormActivity.this, GoogleMapsActivity.class);
                 intent.putExtra("latitude",city.getLatitude());
                 intent.putExtra("longitude",city.getLongitude());
                 intent.putExtra("type",tabType);
