@@ -42,7 +42,7 @@ public class GoogleMapsActivity extends FragmentActivity implements OnMapReadyCa
 
         cLatitude = this.getIntent().getDoubleExtra("latitude", 0);
         cLongitude = this.getIntent().getDoubleExtra("longitude", 0);
-        //type = this.getIntent().getStringExtra("type");
+        type = this.getIntent().getStringExtra("type");
 
         getPoints();
     }

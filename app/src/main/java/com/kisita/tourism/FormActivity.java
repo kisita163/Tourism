@@ -1,10 +1,12 @@
 package com.kisita.tourism;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -45,6 +47,9 @@ public class FormActivity extends AppCompatActivity implements BaseSliderView.On
         xmlParser = new XmlParser();
         tabType = this.getIntent().getStringExtra("TYPE");
 
+       // ActionBar mActionBar = getActionBar();
+        //mActionBar.hide();
+
         // region load data from xml
         try {
             loadXmlFromAssets();
@@ -61,7 +66,7 @@ public class FormActivity extends AppCompatActivity implements BaseSliderView.On
         button .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FormActivity.this, GoogleMapsActivity.class);
+                Intent intent = new Intent(FormActivity.this,GoogleMapsActivity.class);
                 intent.putExtra("latitude",city.getLatitude());
                 intent.putExtra("longitude",city.getLongitude());
                 intent.putExtra("type",tabType);
@@ -78,9 +83,37 @@ public class FormActivity extends AppCompatActivity implements BaseSliderView.On
 
         HashMap<String,Integer> pic_files = new HashMap<String, Integer>();
 
-        pic_files.put("1", R.drawable.pic_kin);
-        pic_files.put("2", R.drawable.pic_kin1);
-        pic_files.put("3", R.drawable.pic_kin2);
+        if(tabType.equals("lodging")){
+            pic_files.put("1", R.drawable.h6);
+            pic_files.put("2", R.drawable.h2);
+            pic_files.put("3", R.drawable.h3);
+            pic_files.put("4", R.drawable.h4);
+            pic_files.put("5", R.drawable.h5);
+            pic_files.put("6", R.drawable.h7);
+            pic_files.put("7", R.drawable.h8);
+            pic_files.put("8", R.drawable.h9);
+            pic_files.put("9", R.drawable.h10);
+            pic_files.put("10", R.drawable.h12);
+        }
+        else if(tabType.equals("restaurant")){
+            pic_files.put("1", R.drawable.r1);
+            pic_files.put("2", R.drawable.r2);
+            pic_files.put("3", R.drawable.r3);
+            pic_files.put("4", R.drawable.r6);
+            pic_files.put("5", R.drawable.r5);
+        }
+        else if(tabType.equals("events")){
+            pic_files.put("1", R.drawable.back);
+            pic_files.put("2", R.drawable.back);
+            pic_files.put("3", R.drawable.back);
+        }
+        else
+        {
+            pic_files.put("1", R.drawable.back);
+            pic_files.put("2", R.drawable.back);
+            pic_files.put("3", R.drawable.back);
+        }
+
 
 
 

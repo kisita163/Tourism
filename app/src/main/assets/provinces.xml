@@ -94,7 +94,7 @@
 	</province>
 	<!-- Kinshasa -->
 	<province name="Kinshasa">
-		<ville name="Kinshasa" lat="-4.339907" long="15.287433" >
+		<ville name="Kinshasa" lat="-4.391427" long="15.303612" >
 			<commune  name="Bandalungwa">
 			</commune>
 			<commune name="Barumbu">

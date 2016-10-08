@@ -58,7 +58,7 @@ public class HistoryActivity extends AppCompatActivity {
     }
     // region URL initializer
     private void initializeUrl() {
-        try {
+        /*try {
             String[] m = getAssets().getLocales();
 
             for(String s:m)
@@ -67,7 +67,7 @@ public class HistoryActivity extends AppCompatActivity {
             }
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
         switch (this.getIntent().getIntExtra("ACTIVITY", -1))
         {
             case CongoProvinces.kinshasa:

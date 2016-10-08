@@ -1,5 +1,6 @@
 package com.kisita.tourism;
 
+import android.app.ActionBar;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,9 +16,12 @@ public class MainActivity extends TabActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ActionBar mActionBar = getActionBar();
+        //mActionBar.hide();
 
         this.initializeActivities(this.getIntent().getIntExtra("ACTIVITY", 0));
         this.initializeTabs();
+
     }
 
     private void initializeActivities(int province)
@@ -25,11 +29,11 @@ public class MainActivity extends TabActivity {
         // region Activities
         form_hotels = new Intent(this, FormActivity.class);
         form_hotels.putExtra("ACTIVITY", province);
-        form_hotels.putExtra("TYPE","hotels");
+        form_hotels.putExtra("TYPE","lodging");
 
         form_restaurants = new Intent(this, FormActivity.class);
         form_restaurants.putExtra("ACTIVITY", province);
-        form_restaurants.putExtra("TYPE","restaurants");
+        form_restaurants.putExtra("TYPE","restaurant");
 
         form_events = new Intent(this, FormActivity.class);
         form_events.putExtra("ACTIVITY", province);
