@@ -1,6 +1,7 @@
 package com.kisita.tourism;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.provider.MediaStore;
@@ -51,6 +52,7 @@ public class CongoActivity extends Activity {
 
                     if(k == prov) {
                         Intent intent = new Intent(CongoActivity.this, MainActivity.class);
+                        showDialog();
                         intent.putExtra("ACTIVITY",prov);
                         startActivity(intent);
                         break;
@@ -68,5 +70,12 @@ public class CongoActivity extends Activity {
         Bitmap hotspots = Bitmap.createBitmap(img.getDrawingCache());
         img.setDrawingCacheEnabled(false);
         return hotspots.getPixel(x, y);
+    }
+
+    public void showDialog(){
+        final Dialog dialog = new Dialog(this);
+        dialog.setTitle("coucou");
+        dialog.setContentView(R.layout.dialog_province);
+        dialog.show();
     }
 }

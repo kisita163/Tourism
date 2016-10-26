@@ -8,21 +8,20 @@
     tools:context="com.kisita.tourism.CongoActivity">
 
 
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:scaleType="fitXY"
-        android:id="@+id/visibleImage"
-        android:src="@drawable/rdcongo"/>
 
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:scaleType="fitXY"
-        android:id="@+id/nonvisibleImage"
-        android:src="@drawable/rdcongo_trans"
-        android:visibility="invisible"
-        android:background="@drawable/back" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/visibleImage"
+            android:src="@drawable/rdcongo"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nonvisibleImage"
+            android:src="@drawable/rdcongo_trans"
+            android:visibility="invisible" />
+
 
 
 </RelativeLayout>
