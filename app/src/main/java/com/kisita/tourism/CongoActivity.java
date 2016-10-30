@@ -52,7 +52,7 @@ public class CongoActivity extends Activity {
 
                     if(k == prov) {
                         Intent intent = new Intent(CongoActivity.this, MainActivity.class);
-                        showDialog();
+                        //showDialog();
                         intent.putExtra("ACTIVITY",prov);
                         startActivity(intent);
                         break;

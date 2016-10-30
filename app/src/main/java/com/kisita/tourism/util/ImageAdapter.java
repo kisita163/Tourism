@@ -23,11 +23,12 @@ public class ImageAdapter extends BaseAdapter{
     private Context mContext;
     public Integer[] mThumbIds = {
             R.drawable.h5,R.drawable.h2,
-            R.drawable.h3,R.drawable.h4,R.drawable.h6
-
+            R.drawable.h3,R.drawable.h4,
+            R.drawable.h6,R.drawable.h5,
+            R.drawable.h2
     };
 
-    public String[] mText = {"Restauration","Logements","Evénements","Culture","Santé"};
+    public String[] mText = {"Restauration","Logements","Evénements","Culture","Santé","Loisirs","Bien-être"};
 
     public ImageAdapter(Context context){
         mContext = context;

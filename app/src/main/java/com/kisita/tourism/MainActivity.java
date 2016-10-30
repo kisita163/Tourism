@@ -1,18 +1,15 @@
 package com.kisita.tourism;
 
-import android.app.ActionBar;
-import android.app.TabActivity;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.PictureDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.TabHost;
 
 import com.kisita.tourism.util.ImageAdapter;
+import com.kisita.tourism.util.ServicesDialog;
 
 public class MainActivity extends AppCompatActivity {
    // private Intent form_hotels;
@@ -20,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     //private Intent form_events;
     //private Intent history;
     private String province;
+    private int mprovince;
 
     @Override
 
@@ -31,13 +29,63 @@ public class MainActivity extends AppCompatActivity {
 
         //this.initializeActivities(this.getIntent().getIntExtra("ACTIVITY", 0));
         //this.initializeTabs();
-        this.setTitle(getActivityTitle(this.getIntent().getIntExtra("ACTIVITY", 0)));
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(this.getIntent().getIntExtra("ACTIVITY", 0)));
+        mprovince = this.getIntent().getIntExtra("ACTIVITY", 0);
+        this.setTitle(getActivityTitle(mprovince));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(mprovince));
         //getSupportActionBar().setBackgroundDrawable(new BitmapDrawable(new Bitmap(R.drawable.h1)));
 
         setContentView(R.layout.activity_grid);
         GridView gridView = (GridView)findViewById(R.id.GridView1);
         gridView.setAdapter(new ImageAdapter(this));
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.i("GridView","item selected = "+position);
+                Bundle args = new Bundle();
+                args.putInt("province", mprovince);
+                ServicesDialog dialog  = new ServicesDialog();
+                switch(position)
+                {
+                    case 0://Restoration
+                        args.putInt("service",ServicesDialog.restoration);
+                        dialog.setArguments(args);
+                        dialog.show(getSupportFragmentManager(),"restoration");
+                        break;
+                    case 1://Lodging
+                        args.putInt("service",ServicesDialog.lodging);
+                        dialog.setArguments(args);
+                        dialog.show(getSupportFragmentManager(),"lodging");
+                        break;
+                    case 2:// Events
+                        args.putInt("service",ServicesDialog.events);
+                        dialog.setArguments(args);
+                        dialog.show(getSupportFragmentManager(),"events");
+                        break;
+                    case 3://Culture
+                        args.putInt("service",ServicesDialog.culture);
+                        dialog.setArguments(args);
+                        dialog.show(getSupportFragmentManager(),"culture");
+                        break;
+                    case 4://Health
+                        args.putInt("service",ServicesDialog.health);
+                        dialog.setArguments(args);
+                        dialog.show(getSupportFragmentManager(),"health");
+                        break;
+                    case 5://spare-time activities
+                        args.putInt("service",ServicesDialog.stActivities);
+                        dialog.setArguments(args);
+                        dialog.show(getSupportFragmentManager(),"spare-time");
+                        break;
+                    case 6://spare-time activities
+                        args.putInt("service",ServicesDialog.beauty);
+                        dialog.setArguments(args);
+                        dialog.show(getSupportFragmentManager(),"beauty");
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
 
 
     }

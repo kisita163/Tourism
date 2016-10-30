@@ -25,4 +25,70 @@
     <string name="town">Commune/Territoire</string>
     <string name="title_activity_google_maps">Map</string>
     <string name="title_activity_new_concept">NewConceptActivity</string>
+
+    <string name="lodging">Logements</string>
+    <string name="restoration">Restauration</string>
+    <string name="culture">Culture</string>
+    <string name="health">Santé</string>
+    <string name="beauty">Bien-être</string>
+    <string name="events">Evénements</string>
+    <string name="st_activities">Loisirs</string>
+
+    <string-array name="lodging_dialog">
+        <item>Hotels</item>
+        <item>Appartements hotel</item>
+        <item>Locations</item>
+        <item>Achats</item>
+    </string-array>
+
+    <string-array name="events_dialog">
+        <item>Rencontre sportives</item>
+        <item>Défilés de mode</item>
+        <item>Festival</item>
+        <item>Conférences</item>
+        <item>Dégustaions</item>
+        <item>Expositions</item>
+        <item>Ventes privées</item>
+    </string-array>
+
+    <string-array name="culture_dialog">
+        <item>Musées</item>
+        <!--<item>Histoire</item>
+        <item>Langues</item> -->
+        <item>Artisanat</item>
+        <item>Librairies et Bibliothèques</item>
+        <item>Théatres</item>
+    </string-array>
+
+    <string-array name="st_activities">
+        <item>Aquariums</item>
+        <item>Centre sportifs</item>
+        <item>Ecoles de danse</item>
+        <item>Shopping</item>
+        <item>Site naturels et recréatifs</item>
+        <item>Parcs et Jardins</item>
+        <item>Zoo</item>
+    </string-array>
+
+    <string-array name="restoration">
+        <item>Bars et cafés</item>
+        <item>Restaurants</item>
+        <item>Térasses locales</item>
+    </string-array>
+
+    <string-array name="health">
+        <item>Pharmacies</item>
+        <item>Hopitaux/Dispensaires</item>
+        <item>Soins traditionnels</item>
+    </string-array>
+
+    <string-array name="beauty">
+        <item>Salons de coiffure</item>
+        <item>Institut de beauté</item>
+        <item>Spa et massage</item>
+    </string-array>
+
+    <string name="kinshasa">Kinshasa</string>
+    <string name="sud_kivu">Sud-kivu</string>
+    <string name="kongo_central">Kongo-central</string>
 </resources>

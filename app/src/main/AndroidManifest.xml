@@ -51,16 +51,17 @@
         <activity
             android:name=".ImageActivity"
             android:label="@string/title_activity_image" >
-        </activity>
-        <activity
-            android:name=".CongoActivity"
-            android:label="@string/title_activity_congo"
-            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".CongoActivity"
+            android:label="@string/title_activity_congo"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
+
         </activity>
         <activity
             android:name=".MapActivity"
