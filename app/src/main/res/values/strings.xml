@@ -3,6 +3,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="action_map">Carte</string>
     <string name="title_activity_hotels">Hotels</string>
 
     <string name="title_activity_sleep">SleepActivity</string>
@@ -63,6 +64,7 @@
     <string-array name="st_activities">
         <item>Aquariums</item>
         <item>Centre sportifs</item>
+        <item>Boîte de nuit</item>
         <item>Ecoles de danse</item>
         <item>Shopping</item>
         <item>Site naturels et recréatifs</item>
@@ -91,4 +93,7 @@
     <string name="kinshasa">Kinshasa</string>
     <string name="sud_kivu">Sud-kivu</string>
     <string name="kongo_central">Kongo-central</string>
+    <string name="title_activity_province_list">Provinces</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_result_list">ResultListActivity</string>
 </resources>

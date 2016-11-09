@@ -71,11 +71,6 @@ public class ImageAdapter extends BaseAdapter{
         row.setLayoutParams(new GridView.LayoutParams(GridLayout.LayoutParams.WRAP_CONTENT, 400));
 
 
-        //ImageView imageView = new ImageView(mContext);
-        //imageView.setImageResource(mThumbIds[position]);
-        //row.setScaleType(ImageView.ScaleType.CENTER_CROP);
-
-
         return row;
     }
 }

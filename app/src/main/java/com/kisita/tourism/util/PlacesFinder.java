@@ -47,12 +47,21 @@ public class PlacesFinder {
     }
 
     private String createUrl() throws UnsupportedEncodingException {
-        String urlLat = URLEncoder.encode(latitude, "utf-8");
-        String urlLng = URLEncoder.encode(longitude, "utf-8");
-        String urlType = URLEncoder.encode(type, "utf-8");
+        String urlLat;
+        String urlLng;
+        String urlType;
+        if(latitude != null || longitude != null || type != null) {
+             urlLat = URLEncoder.encode(latitude, "utf-8");
+             urlLng = URLEncoder.encode(longitude, "utf-8");
+             urlType = URLEncoder.encode(type, "utf-8");
+        }else{
+            urlLat = URLEncoder.encode("-4349114", "utf-8");
+            urlLng = URLEncoder.encode("15292118", "utf-8");
+            urlType = URLEncoder.encode("lodging", "utf-8");
+        }
 
-        String toReturn = PLACE_URL_API + "location=" + urlLat +"," + urlLng + "&radius=10000" + "&type="+urlType+ "&key=" + GOOGLE_API_KEY;
-        System.out.println("----------> URL = "+toReturn);
+        String toReturn = PLACE_URL_API + "location=" + urlLat +"," + urlLng + "&radius=30000" + "&type="+urlType+ "&key=" + GOOGLE_API_KEY;
+        System.out.println("----------> URL = " + toReturn);
 
         return  toReturn;
     }
@@ -70,7 +79,7 @@ public class PlacesFinder {
 
                 String line;
                 while ((line = reader.readLine()) != null) {
-                    System.out.println("----> " + line);
+                    Log.i(getClass().getName(),line);
                     buffer.append(line + "\n");
                 }
 
@@ -116,7 +125,7 @@ public class PlacesFinder {
             place.longitude = location.getDouble("lng");
             place.vicinity = vicinity;//vicinity.getString("text");
 
-            Log.i("Google", "name = " + place.name);
+            Log.i(getClass().getName(), "name = " + place.name);
 
             places.add(place);
         }

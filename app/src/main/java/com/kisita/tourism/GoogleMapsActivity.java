@@ -43,6 +43,7 @@ public class GoogleMapsActivity extends FragmentActivity implements OnMapReadyCa
         cLatitude = this.getIntent().getDoubleExtra("latitude", 0);
         cLongitude = this.getIntent().getDoubleExtra("longitude", 0);
         type = this.getIntent().getStringExtra("type");
+        //int province = this.getIntent().getIntExtra("province",0);
 
         getPoints();
     }
@@ -61,7 +62,7 @@ public class GoogleMapsActivity extends FragmentActivity implements OnMapReadyCa
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         LatLng centre = new LatLng(cLatitude, cLongitude);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centre, 13));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centre, 10));
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
