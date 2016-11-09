@@ -40,14 +40,16 @@ public class ResultAdapter extends ArrayAdapter {
         if(row == null) {
             //System.out.println("ConvertView is not provided");
             LayoutInflater inflater = (LayoutInflater) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
-            row = inflater.inflate(R.layout.province_adapter,null);
+            row = inflater.inflate(R.layout.result_dapter,null);
         }
-        TextView  pName = (TextView)row.findViewById(R.id.provinceView);
-        ImageView pImage = (ImageView)row.findViewById(R.id.imageView7);
+        TextView  pName = (TextView)row.findViewById(R.id.resultName);
+        TextView  pDistance = (TextView)row.findViewById(R.id.resultDistance);
+        ImageView pImage = (ImageView)row.findViewById(R.id.resultImage);
 
         pImage.setBackgroundColor(generateColor());
         if(places.size() > 0) {
             pName.setText(places.get(position).name);
+            pDistance.setText(String.valueOf(places.get(position).distance) + " km"); //TODO // what if distance is null
             Log.i(getClass().getName(),places.get(position).name);
         }
 

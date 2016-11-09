@@ -3,6 +3,7 @@ package com.kisita.tourism;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
+import android.location.Location;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,11 +11,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
-
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
+import com.kisita.tourism.util.GPSTracker;
 import com.kisita.tourism.util.Place;
 import com.kisita.tourism.util.PlacesFinder;
 import com.kisita.tourism.util.PlacesFinderListener;
@@ -34,19 +31,23 @@ public class ResultListActivity extends AppCompatActivity implements PlacesFinde
     private ListView list;
     private ResultAdapter adapter;
     private int province;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_list);
 
-        list = (ListView)findViewById(R.id.resultView);
+        list = (ListView) findViewById(R.id.resultView);
 
         cLatitude = this.getIntent().getDoubleExtra("latitude", 0);
         cLongitude = this.getIntent().getDoubleExtra("longitude", 0);
         type = this.getIntent().getStringExtra("type");
+
         places = new ArrayList<>();
-        province = this.getIntent().getIntExtra("province",0);
-        adapter = new ResultAdapter(this,places);
+
+        province = this.getIntent().getIntExtra("province", 0);
+        adapter = new ResultAdapter(this, places);
+
         list.setAdapter(adapter);
 
         getPoints();
@@ -74,12 +75,12 @@ public class ResultListActivity extends AppCompatActivity implements PlacesFinde
         }
 
         if (id == R.id.resultMap) {
-            Intent intent = new Intent(this,GoogleMapsActivity.class);
-            intent.putExtra("latitude",cLatitude);
-            intent.putExtra("longitude",cLongitude);
+            Intent intent = new Intent(this, GoogleMapsActivity.class);
+            intent.putExtra("latitude", cLatitude);
+            intent.putExtra("longitude", cLongitude);
 
-            intent.putExtra("type",type);
-            intent.putExtra("province",province);
+            intent.putExtra("type", type);
+            intent.putExtra("province", province);
 
             startActivity(intent);
         }
@@ -87,9 +88,9 @@ public class ResultListActivity extends AppCompatActivity implements PlacesFinde
         return super.onOptionsItemSelected(item);
     }
 
-    private void getPoints(){
+    private void getPoints() {
         try {
-            new PlacesFinder(cLatitude,cLongitude,type,this).execute();
+            new PlacesFinder(cLatitude, cLongitude, type, this).execute();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -105,15 +106,28 @@ public class ResultListActivity extends AppCompatActivity implements PlacesFinde
 
     @Override
     public void onDirectionFinderSuccess(List<Place> place) {
-        if(place == null){
+        if (place == null) {
             return;
         }
+        Location destination = new Location("destination");
+        Location currPosition = new Location("currPosition");
+
+        //currPosition.setLatitude(currPosition.getLatitude());
 
         adapter.notifyDataSetChanged();
-        for(Place p:place){
-            Log.i(getClass().getName(),p.name);
+        for (Place p : place) {
+
+            destination.setLatitude(p.latitude);
+            destination.setLongitude(p.longitude);
+            currPosition.setLatitude(getIntent().getDoubleExtra("currLatitude", 0));
+            currPosition.setLongitude(getIntent().getDoubleExtra("currLongitude", 0));
+
+            p.distance = Math.round(destination.distanceTo(currPosition)/1000);
             adapter.add(p);
+
+            Log.i(getClass().getName(), "distance = " + Math.round(destination.distanceTo(currPosition) / 1000));
         }
+
         adapter.notifyDataSetChanged();
     }
 }

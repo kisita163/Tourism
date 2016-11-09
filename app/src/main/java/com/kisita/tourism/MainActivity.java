@@ -28,13 +28,18 @@ public class MainActivity extends AppCompatActivity {
     private XmlParser.City city;
     private XmlParser.City town;
     private InputStream stream = null;
+    private double currLatitude;
+    private double currLongitude;
 
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mprovince = this.getIntent().getIntExtra("ACTIVITY", 0);
+        mprovince = this.getIntent().getIntExtra("province", 0);
+
+        currLatitude = this.getIntent().getDoubleExtra("latitude", 0);
+        currLongitude = this.getIntent().getDoubleExtra("longitude", 0);
 
         this.setTitle(getActivityTitle(mprovince));
 
@@ -50,9 +55,12 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("GridView", "item selected = " + position);
                 Bundle args = new Bundle();
                 args.putInt("province", mprovince);
+                Log.i(getClass().getName(), "current position = " + currLatitude);
 
                 args.putDouble("latitude", getProvinceLatitude(mprovince));
                 args.putDouble("longitude",getProvinceLongitude(mprovince));
+                args.putDouble("currLatitude",currLatitude);
+                args.putDouble("currLongitude",currLongitude);
 
                 ServicesDialog dialog  = new ServicesDialog();
                 switch(position)

@@ -69,11 +69,14 @@ public class ServicesDialog extends DialogFragment {
                         for (int i : mSelectedItems) {
                             Log.i(getClass().getName(),"selected = "+i);
                         }
+
                         Intent intent = new Intent(getActivity(),ResultListActivity.class);//GoogleMapsActivity.class);
                         String type = getSearchCriterion();
-
+                        Log.i(getClass().getName(), "current position = " + getArguments().getDouble("currLatitude"));
                         intent.putExtra("latitude",getArguments().getDouble("latitude"));
                         intent.putExtra("longitude",getArguments().getDouble("longitude"));
+                        intent.putExtra("currLatitude",getArguments().getDouble("currLatitude"));
+                        intent.putExtra("currLongitude",getArguments().getDouble("currLongitude"));
 
                         intent.putExtra("type",type);
                         //intent.putExtra("level2","Baumbu");
