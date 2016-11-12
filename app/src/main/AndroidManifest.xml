@@ -90,6 +90,10 @@
             android:name=".ResultListActivity"
             android:label="@string/title_activity_result_list" >
         </activity>
+        <activity
+            android:name=".TransportActivity"
+            android:label="@string/title_activity_transport" >
+        </activity>
     </application>
 
 </manifest>

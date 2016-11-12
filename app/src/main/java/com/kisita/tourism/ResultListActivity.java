@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AbsListView;
 import android.widget.ListView;
 import com.kisita.tourism.util.GPSTracker;
 import com.kisita.tourism.util.Place;
@@ -49,6 +50,21 @@ public class ResultListActivity extends AppCompatActivity implements PlacesFinde
         adapter = new ResultAdapter(this, places);
 
         list.setAdapter(adapter);
+        list.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                final int lastItem = firstVisibleItem + visibleItemCount;
+                if(lastItem == totalItemCount )
+                    Log.i(getClass().getName(),"last item reached "+ firstVisibleItem +
+                                                               "\n"+ visibleItemCount +
+                                                               "\n"+ totalItemCount);
+            }
+        });
 
         getPoints();
 
@@ -99,8 +115,8 @@ public class ResultListActivity extends AppCompatActivity implements PlacesFinde
 
     @Override
     public void onDirectionFinderStart() {
-        progressDialog = ProgressDialog.show(this, "Please wait.",
-                "Finding places..!", true);
+        progressDialog = ProgressDialog.show(this,getResources().getString(R.string.please_wait),
+                 getResources().getString(R.string.searching), true);
 
     }
 
@@ -109,6 +125,9 @@ public class ResultListActivity extends AppCompatActivity implements PlacesFinde
         if (place == null) {
             return;
         }
+        Log.i(getClass().getName(), "stop progress dialog");
+        if(this.progressDialog != null)
+            this.progressDialog.cancel();
         Location destination = new Location("destination");
         Location currPosition = new Location("currPosition");
 

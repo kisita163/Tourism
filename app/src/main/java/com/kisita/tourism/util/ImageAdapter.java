@@ -25,10 +25,10 @@ public class ImageAdapter extends BaseAdapter{
             R.drawable.h5,R.drawable.h2,
             R.drawable.h3,R.drawable.h4,
             R.drawable.h6,R.drawable.h5,
-            R.drawable.h2
+            R.drawable.h2,R.drawable.h4
     };
 
-    public String[] mText = {"Restauration","Logements","Evénements","Culture","Santé","Loisirs","Bien-être"};
+    public String[] mText = {"Restauration","Logements","Evénements","Culture","Santé","Loisirs","Bien-être","Transport"};
 
     public ImageAdapter(Context context){
         mContext = context;

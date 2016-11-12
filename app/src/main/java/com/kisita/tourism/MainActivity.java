@@ -1,5 +1,6 @@
 package com.kisita.tourism;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -99,6 +100,10 @@ public class MainActivity extends AppCompatActivity {
                         args.putInt("service",ServicesDialog.beauty);
                         dialog.setArguments(args);
                         dialog.show(getSupportFragmentManager(),"beauty");
+                        break;
+                    case 7://Transport
+                        Intent transport = new Intent(MainActivity.this,TransportActivity.class);
+                        startActivity(transport);
                         break;
                     default:
                         break;

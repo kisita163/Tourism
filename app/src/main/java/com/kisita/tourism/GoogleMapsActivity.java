@@ -79,8 +79,8 @@ public class GoogleMapsActivity extends FragmentActivity implements OnMapReadyCa
 
     @Override
     public void onDirectionFinderStart() {
-        progressDialog = ProgressDialog.show(this, "Please wait.",
-                "Finding places..!", true);
+        progressDialog = ProgressDialog.show(this,getResources().getString(R.string.please_wait),
+                getResources().getString(R.string.searching), true);
 
         if (placeMarkers != null) {
             for (Marker marker : placeMarkers) {
@@ -96,6 +96,8 @@ public class GoogleMapsActivity extends FragmentActivity implements OnMapReadyCa
         if(place == null){
             return;
         }
+        if(this.progressDialog != null)
+            this.progressDialog.cancel();
         for(Place p:place){
             placeMarkers.add(mMap.addMarker(new MarkerOptions()
                     .title(p.name)

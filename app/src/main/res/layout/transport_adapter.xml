@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin">
+
+    <ImageView
+        android:id="@+id/transportImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="5dp"
+        tools:background="#EE1"/>
+
+    <TextView
+        android:id="@+id/terminus1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/transportImage"
+        android:layout_alignTop="@id/transportImage"
+        android:textStyle="bold"
+        android:text="Item"/>
+    <TextView
+        android:id="@+id/terminus2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/terminus1"
+        android:layout_toRightOf="@id/transportImage"
+        android:layout_alignBottom="@id/transportImage"
+        android:textStyle="bold"
+        android:text="Price"/>
+
+
+
+</RelativeLayout>

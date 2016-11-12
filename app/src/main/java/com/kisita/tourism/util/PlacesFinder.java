@@ -1,6 +1,8 @@
 package com.kisita.tourism.util;
 
+import android.content.Context;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -32,6 +34,11 @@ public class PlacesFinder {
     private String longitude;
     private String type;
     private PlacesFinderListener listener;
+    private List<Place> places;
+    private boolean hasNextPageToken = false;
+    private char pageNumber = 0;
+    private String token="";
+    private boolean dialog = false;
 
 
     public PlacesFinder(double latitude, double longitude, String type , PlacesFinderListener listener ) {
@@ -39,10 +46,15 @@ public class PlacesFinder {
         this.longitude = Double.toString(longitude);
         this.type = type;
         this.listener = listener;
+        places = new ArrayList<>();
     }
 
     public void execute() throws UnsupportedEncodingException {
-        //listener.onDirectionFinderStart();
+        if(!dialog)
+        {
+            listener.onDirectionFinderStart();
+            dialog = true;
+        }
         new DownloadRawData().execute(createUrl());
     }
 
@@ -60,8 +72,14 @@ public class PlacesFinder {
             urlType = URLEncoder.encode("lodging", "utf-8");
         }
 
-        String toReturn = PLACE_URL_API + "location=" + urlLat +"," + urlLng + "&radius=30000" + "&type="+urlType+ "&key=" + GOOGLE_API_KEY;
-        System.out.println("----------> URL = " + toReturn);
+        String toReturn = PLACE_URL_API + "location=" + urlLat +"," + urlLng + "&radius=30000" + "&type="+urlType;
+
+        if(hasNextPageToken){
+            toReturn += "&pagetoken="+token;
+        }
+        toReturn += "&key="+ GOOGLE_API_KEY;
+
+        Log.i(getClass().getName(), "URL = " + toReturn);
 
         return  toReturn;
     }
@@ -106,11 +124,18 @@ public class PlacesFinder {
     private void parseJSon(String data) throws JSONException {
         if (data == null)
             return;
-
-        List<Place> places = new ArrayList<>();
         JSONObject jsonData = new JSONObject(data);
+        //String jsonNextToken = jsonData.getString("next_page_token");
         JSONArray jsonResults = jsonData.getJSONArray("results");
-        System.out.println("----> " + jsonResults.length());
+        Log.i(getClass().getName(),"length="+jsonResults.length()+ " " + hasNextPageToken);
+        if(jsonResults.length() == 0 && hasNextPageToken){
+            try {
+                this.execute();
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        }
+
         for (int i = 0; i < jsonResults.length(); i++) {
             JSONObject jsonPlace = jsonResults.getJSONObject(i);
             Place place = new Place();
@@ -129,6 +154,27 @@ public class PlacesFinder {
 
             places.add(place);
         }
-        listener.onDirectionFinderSuccess(places);
+        if(jsonData.has("next_page_token")) {
+            Log.i(getClass().getName(), jsonData.getString("next_page_token"));
+            hasNextPageToken=true;
+            token = jsonData.getString("next_page_token");
+
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                this.execute();
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+
+        }else {
+            hasNextPageToken=false;
+            Log.i(getClass().getName(), "stop progress dialog");
+            listener.onDirectionFinderSuccess(places);
+        }
     }
 }
